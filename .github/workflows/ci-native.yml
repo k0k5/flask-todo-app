@@ -22,10 +22,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Initialize SQLite Database
-      run: |
-        python init_db.py
-
     - name: Smoke test Flask server
       run: |
         python app.py &
