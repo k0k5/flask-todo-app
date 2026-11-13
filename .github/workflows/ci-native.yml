@@ -15,14 +15,12 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.10'
+        python-version: '3.7'
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        # Специально для Flask 0.11, чтобы не было конфликтов с Werkzeug и MarkupSafe
-        pip install "Werkzeug==0.16.1" "MarkupSafe==2.0.1" "itsdangerous==1.1.0" "click==7.1.2"
 
     - name: Smoke test Flask server
       env:
